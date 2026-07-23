@@ -1,4 +1,3 @@
-  GNU nano 7.2                                     my-unzip.c
 //----- My-Unzip -----
 // Part of project 2, unix utilities
 

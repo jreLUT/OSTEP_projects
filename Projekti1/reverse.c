@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// Library imports ^^^^cl
+// Library imports ^^^^
 
 typedef struct Node {
     char *row;
@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 {
     if (argc > 3) {
         fprintf(stderr, "usage: reverse <input> <output>\n");
-        return 1;
+        exit(1);
     }
 
     // Input and output file pointers
@@ -27,18 +27,18 @@ int main(int argc, char const *argv[])
     if (argc > 1) {
         if ((file_in = fopen(argv[1], "r")) == NULL) {
             fprintf(stderr, "error: cannot open file '%s'\n", argv[1]);
-            return 1;
+            exit(1);
         }
     }
 
     // If the user gave two arguments try to open the output file too (file name is first argument)
     if (argc == 3) {
         if (strcmp(argv[2], argv[1]) == 0) {
-            fprintf(stderr, "error: Input and output file must differ\n");
+            fprintf(stderr, "Input and output file must differ\n");
             if (file_in != stdin) {
                 fclose(file_in);
             }
-            return 1;
+            exit(1);
         }
     
 
@@ -47,7 +47,7 @@ int main(int argc, char const *argv[])
             if (file_in != stdin) {
                 fclose(file_in);
             }
-            return 1;
+            exit(1);
         }
     }
     // The head of the linked list and a pointer to the current row
@@ -66,7 +66,7 @@ int main(int argc, char const *argv[])
         // Creates a new node and adds it to the head of our linked list
         Node *newNode = malloc(sizeof(Node));
         if (newNode == NULL) { // If mallocs fails free and close everything returning 1
-            fprintf(stderr, "error: malloc failed\n");
+            fprintf(stderr, "malloc failed\n");
             free(buffer);
             freeLinkedList(head);
             if (file_in != stdin) {
@@ -75,7 +75,7 @@ int main(int argc, char const *argv[])
             if (file_out != stdout) {
                 fclose(file_out);
             }
-            return 1;
+            exit(1);
         }
 
         // Allocates memory for the row in newNode
@@ -91,7 +91,7 @@ int main(int argc, char const *argv[])
             if (file_out != stdout) {
                 fclose(file_out);
             }
-            return 1;
+            exit(1);
         }
 
         // Copy the row into a new node

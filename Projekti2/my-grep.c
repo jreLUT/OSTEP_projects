@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
   // Makes sure at least the search arg is given
     if (argc < 2) {
         printf("my-grep: searchterm [file ...]\n");
-        return 1;
+        exit(1);
     }
     char *searchWord = argv[1];
     // Stdin is used if no files are given
