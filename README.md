@@ -8,20 +8,21 @@ Tämä repositorio sisältää kurssin kolmen miniprojektin lähdekoodit. Raport
 *   **Projekti2/**: Unix Utilities
 *   **Projekti4/xv6-public/**: Kernel Hacking
 
+
 ---
 
 
 ## Projekti 1 – reverse
 
-## Tiedostot
+### Tiedostot
 
 - reverse.c
 
-## Kääntäminen
+### Kääntäminen
 
 gcc reverse.c -o reverse
 
-## Ajaminen
+### Ajaminen
 
 ./reverse input.txt output.txt
 
@@ -30,10 +31,20 @@ gcc reverse.c -o reverse
 
 
 
-
 ## Projekti 2: Unix Utilities
 
+Tämä kansio sisältää C-kielellä toteutetut ohjelmat Unix-työkaluista: `cat`, `grep`, `zip` ja `unzip`.
 
+### Kääntäminen
+
+Kaikki ohjelmat tulee kääntää `gcc`-kääntäjällä käyttäen `-Wall` ja `-Werror` -lippuja. 
+
+```bash
+gcc -o my-cat my-cat.c -Wall -Werror
+gcc -o my-grep my-grep.c -Wall -Werror
+gcc -o my-zip my-zip.c -Wall -Werror
+gcc -o my-unzip my-unzip.c -Wall -Werror
+```
 
 
 ---
