@@ -52,12 +52,7 @@ gcc -o my-unzip my-unzip.c -Wall -Werror
 
 ## Projekti 4: Kernel Hacking (xv6)
 
-Tässä projektissa xv6-käyttöjärjestelmän ytimeen on lisätty uusi järjestelmäkutsu (system call) `getreadcount`. Se pitää kirjaa siitä, kuinka monta kertaa `read()`-kutsua on kutsuttu ytimen käynnistymisen jälkeen.
-
-### Toteutetut pisteytettävät ominaisuudet:
-1.  **Perusvaatimus (2p):** Järjestelmäkutsu on lisätty ja se kääntyy/toimii ongelmitta.
-2.  **Dokumentaatio (1p):** Lähdekoodi on kommentoitu ja toiminta on dokumentoitu erilliseen PDF-tiedostoon kuvakaappauksineen.
-3.  **Laskurin nollaus (1p):** Järjestelmäkutsu ottaa vastaan argumentin, jolla laskurin voi nollata (`readcountTest 1`).
+Tässä projektissa xv6-käyttöjärjestelmän ytimeen on lisätty uusi järjestelmäkutsu (system call) `getreadcount`. Se pitää kirjaa siitä, kuinka monta kertaa `read()` on kutsuttu.
 
 ### Kääntäminen ja ajaminen (QEMU)
 
@@ -66,3 +61,7 @@ Siirry `xv6-public` -kansioon ja käännä käyttöjärjestelmä (edellyttää q
 ```bash
 make clean
 make qemu
+```
+
+### Testi- ja nollaustoiminto
+Syötteellä `readcountTest` kyseistä järjestelmäkutsua testataan, sekä syötteellä `readcountTest 1` laskuri nollataan.
