@@ -10,7 +10,36 @@ Tämä repositorio sisältää kurssin kolmen miniprojektin lähdekoodit. Raport
 
 ---
 
-## Projekti 3: Kernel Hacking (xv6)
+
+## Projekti 1 – reverse
+
+## Tiedostot
+
+- reverse.c
+
+## Kääntäminen
+
+gcc reverse.c -o reverse
+
+## Ajaminen
+
+./reverse input.txt output.txt
+
+
+---
+
+
+
+
+## Projekti 2: Unix Utilities
+
+
+
+
+---
+
+
+## Projekti 4: Kernel Hacking (xv6)
 
 Tässä projektissa xv6-käyttöjärjestelmän ytimeen on lisätty uusi järjestelmäkutsu (system call) `getreadcount`. Se pitää kirjaa siitä, kuinka monta kertaa `read()`-kutsua on kutsuttu ytimen käynnistymisen jälkeen.
 
@@ -21,8 +50,8 @@ Tässä projektissa xv6-käyttöjärjestelmän ytimeen on lisätty uusi järjest
 
 ### Kääntäminen ja ajaminen (QEMU)
 
-Siirry `xv6-public` -kansioon ja käännä käyttöjärjestelmä:
+Siirry `xv6-public` -kansioon ja käännä käyttöjärjestelmä (edellyttää qemu ja make lataamista):
 
 ```bash
 make clean
-make qemu-nox
+make qemu
